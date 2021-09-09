@@ -12,4 +12,4 @@
       register: myoutput
     - name: read the output
       debug:
-        msg: "the output is {{ myoutput }}"
+        var: "{{ myoutput }}"
