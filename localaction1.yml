@@ -4,9 +4,9 @@
   become: yes
   tasks:
     - name: creating files using local action
-      local_action: command touch /tmp/"{{ webserver }}"_local.txt
+      local_action: command touch /tmp/local.txt
     - name: here we copy local file to remote host
       copy:
-        src: /tmp/{{ webserver }}_local.txt
+        src: /tmp/local.txt
         dest: var/tmp/
         state: present
