@@ -1,2 +1,2 @@
 [webserver]
-localhost var1=inventory
+localhost var1=inventory local_var=5
