@@ -1,0 +1,16 @@
+---
+- name: Example for Register feature
+  hosts: appserver
+  become: yes
+  tasks:
+    - name: To check the uptime of remote host
+      command: uptime
+      register: uptime_var
+    - name: To check free memory on remote host 
+      shell: free -m
+      register: free_var
+      debug:
+        var: "{{ item }}" 
+      loop:
+        stdout_lines
+        stdout_lines 
