@@ -4,10 +4,7 @@
   become: yes
   tasks:
     - name: creating files using local action
-      local_action:
-        command touch /tmp/"{{ webserver }}"_local.txt
-      debug:
-        msg: "files are created  {{ item }}"
+      local_action: command touch /tmp/"{{ webserver }}"_local.txt
     - name: here we copy local file to remote host
       copy:
         src: /tmp/{{ webserver }}_local.txt
