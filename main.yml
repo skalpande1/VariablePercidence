@@ -1,6 +1,6 @@
 ---
 - name: understanding varaible precidence
-  host: webserver
+  hosts: webserver
   become: yes
   tasks:
     - name: print the value of var1
