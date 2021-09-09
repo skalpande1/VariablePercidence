@@ -20,3 +20,15 @@
     #   loop:
     #     stdout_lines
     #     stdout_lines 
+    
+    - name: check whether /tmp/test1.txt exists or not 
+      command: ls */tmp/* test1.txt
+      register: check_rc_var 
+      ignore_errors: yes
+      debug:
+        var: check_rc_var.rc
+    - name: create file /tmp/test1.txt when it doesn't exists already 
+      file:
+      path: /var/tmp/test1.txt 
+      state: touch
+      when: check_rc_var.rc != 0
