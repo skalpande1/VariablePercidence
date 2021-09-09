@@ -1,0 +1,19 @@
+---
+- name: understanding local Action and sending email
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: sending  email using local action
+      local_action: 
+        module: mail
+        subject: "jst for check" 
+        to: root@localhost
+        body: "hi this is the checking mail "
+        run_once: true
+    - name: update the centos machine
+      yum:
+        name: httpd
+        state: latest
+    - name: here we copy local file to remote host
+      debug:
+        msg: "Everyting is fine"
