@@ -1,0 +1,11 @@
+---
+- name: Example for Register feature
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: finding all text file in /tmp folder
+      shell: "find /tmp -name *.txt"
+      register: myoutput
+    - name: read the output
+      debug:
+        msg: "the output is {{ myoutput }}"
