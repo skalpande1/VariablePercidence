@@ -3,6 +3,9 @@
   hosts: webserver
   become: yes
   tasks:
+    - name: debug msg 
+      debug:
+        msg: "debug"
     - name: wrong variable
       file:
         path: "{{ file_path }}"
