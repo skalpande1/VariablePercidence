@@ -8,7 +8,7 @@
         name: var/tmp/sk.txt
         state: touch
     - name: finding all text file in /tmp folder
-      shell: "find /var/tmp/-name *.txt"
+      shell: "find */tmp/* -name *.txt"
       register: myoutput
     - name: read the output
       debug:
