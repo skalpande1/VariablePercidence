@@ -11,12 +11,12 @@
 
   - name: use that fact in module
     file:
-      path: "{{file_name}}"
+      path: "{{ file_name }}"
       state: touch
   - name : Here we use file module to create files with variable values as names file as facts
     file:
-    path: "{{ item }}"
-    state: touch
+        path: "{{ item }}"
+        state: touch
     loop:
-        - "{{file1}}"
-        - "{{file2}}"
+        - "{{ file1 }}"
+        - "{{ file2 }}"
