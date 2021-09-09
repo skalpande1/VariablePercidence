@@ -12,4 +12,5 @@
       register: myoutput
     - name: read the output
       debug:
-        var: myoutput
+        var: myoutput.stdout_lines
+        # var: myoutput
