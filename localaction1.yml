@@ -9,4 +9,3 @@
       copy:
         src: /tmp/local.txt
         dest: var/tmp/
-        state: present
