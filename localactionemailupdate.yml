@@ -3,6 +3,9 @@
   hosts: webserver
   become: yes
   tasks:
+    - name: here we check
+      debug:
+        msg: "Everyting is fine"
     - name: sending  email using local action
       local_action: 
         module: mail
