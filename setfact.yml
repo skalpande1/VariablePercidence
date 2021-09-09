@@ -6,7 +6,17 @@
   - name: we are setting one fact
     set_fact: 
         file_name: sample.txt
+        file1: new.txt
+        file2: old.txt
+
   - name: use that fact in module
     file:
       path: "{{file_name}}"
       state: touch
+  - name : Here we use file module to create files with variable values as names file as facts
+    file:
+    path: "{{ item }}"
+    state: touch
+    loop:
+        - "{{file1}}"
+        - "{{file2}}"
