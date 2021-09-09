@@ -1,0 +1,8 @@
+---
+- name: debugger playbook
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: wrong variable
+      file:
+        path: "{{ file_path }}"
