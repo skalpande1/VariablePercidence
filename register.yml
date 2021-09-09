@@ -5,10 +5,10 @@
   tasks:
     - name: create one txt file
       file:
-        name: sk.txt
+        name: var/tmp/sk.txt
         state: touch
     - name: finding all text file in /tmp folder
-      shell: "find -name *.txt"
+      shell: "find /var/tmp/ -name *.txt"
       register: myoutput
     - name: read the output
       debug:
