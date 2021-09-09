@@ -6,12 +6,17 @@
     - name: To check the uptime of remote host
       command: uptime
       register: uptime_var
-    
+    - name: read the output
+      debug:
+        var: uptime_var.stdout_lines
     - name: To check free memory on remote host 
       shell: free -m
       register: free_var
+    - name: read the output 
       debug:
-        var: "{{ item }}" 
-      loop:
-        stdout_lines
-        stdout_lines 
+        var: free_var.stdout_lines
+    #   debug:
+    #     var: "{{ item }}" 
+    #   loop:
+    #     stdout_lines
+    #     stdout_lines 
