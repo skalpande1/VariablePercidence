@@ -1,0 +1,12 @@
+---
+- name: setting facts
+  hosts: webserver
+  become: yes
+  tasks:
+  - name: we are setting one fact
+    set_fact: 
+        file_name: sample.txt
+  - name: use that fact in module
+    file:
+      path: {{file_name}}
+      state: present
