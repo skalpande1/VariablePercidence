@@ -1,2 +1,4 @@
 [webserver]
-localhost var1=inventory local_var=5
+172.31.38.65
+172.31.40.175
+## localhost var1=inventory local_var=5

@@ -1,0 +1,15 @@
+---
+- name: understanding local Action
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: creating files using local action
+      local_action:
+        command touch /tmp/"{{ webserver }}"_local.txt
+      debug:
+        msg: "files are created  {{ item }}"
+    - name: here we copy local file to remote host
+      copy:
+        src: /tmp/{{ webserver }}_local.txt
+        dest: var/tmp/
+        state: present
