@@ -27,6 +27,7 @@
       ignore_errors: yes
       debug:
         var: check_rc_var.rc
+        
     - name: create file /tmp/test1.txt when it doesn't exists already 
       file:
       path: /var/tmp/test1.txt 
