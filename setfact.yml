@@ -8,5 +8,5 @@
         file_name: sample.txt
   - name: use that fact in module
     file:
-      path: {{file_name}}
-      state: present
+      path: "{{file_name}}"
+      state: touch
