@@ -6,3 +6,7 @@
     - name: wrong variable
       file:
         path: "{{ file_path }}"
+        state: touch
+    - name: debug msg jst for checking
+      debug:
+        msg: "hi this is debug"
