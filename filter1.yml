@@ -1,0 +1,12 @@
+---
+- name: understanding filters
+  hosts: webserver
+  become: yes
+  tasks:
+  - name: filtering concept
+    vars:
+        var_1: 5
+    set_fact:
+        test_var: "{{ var_1 | default(2) }}"
+    debug:
+        var: test_var 
