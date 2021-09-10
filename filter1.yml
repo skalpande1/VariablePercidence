@@ -3,10 +3,21 @@
   hosts: webserver
   become: yes
   tasks:
+  - name: Touch files with an optional mode
+    file:
+    dest: "{{ item.path }}"
+    state: touch
+    mode: "{{ item.mode | default(omit) }}"
+    loop:
+    - path: /tmp/foo
+    - path: /tmp/bar
+    - path: /tmp/baz
+      mode: "0444"
+
   - name: filtering concept
     vars:
         var_1: 5
     set_fact: 
-    test_var: "{{ var_1 | default(2) }}"
+        test_var: "{{ var_1 | default(2) }}"
     debug:
         var: test_var 
