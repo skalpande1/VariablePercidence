@@ -5,7 +5,7 @@
   tasks:
     - name: Touch files with an optional mode
       file:
-      dest: "{{ item.path }}"
+        dest: "{{ item.path }}"
       state: touch
       mode: "{{ item.mode | default(omit) }}"
       loop:
