@@ -2,19 +2,9 @@
 - name: Dictionary playbook example
   hosts: webserver
   tasks:
-    - name: Display the Dictionary
-      set_fact:
-        mydict2: "{{ mydict2 | default({ 'Name': 'Sarav'})}}"
-        mydict: "{{ mydict | default({})}}"
-    - name: Display the Dictionaries
-      debug: var="{{item}}"
-      loop:
-        - 'mydict2'
-        - 'mydict'
-    
     - name: Create and Add items to dictionary
       set_fact: 
-          userdata: "{{ userdata | dict2item }}"
+          userdata: "{{ userdata | dict2items }}"
       with_items:
         - { 'key': 'Name' , 'value': 'SaravAK'}
         - { 'key': 'Email' , 'value': 'sarav@gritfy.com'}
