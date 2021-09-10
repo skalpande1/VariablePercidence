@@ -1,6 +1,6 @@
 ---
 - name: Dictionary playbook example
-  hosts: localhost
+  hosts: webserver
   vars: 
     - mydict: {
                'Name': 'Shub', 
