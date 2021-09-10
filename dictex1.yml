@@ -5,12 +5,10 @@
     - name: Create and Add items to dictionary
       set_fact: 
           userdata: "{{ userdata | dict2items }}"
-      with_items:
-        # - { 'key': 'Name' , 'value': 'SaravAK'}
-        # - { 'key': 'Email' , 'value': 'sarav@gritfy.com'}
-        # - { 'key': 'Location' , 'value': 'Coimbatore'}
-        # - { 'key': 'Nationality' , 'value': 'Indian'}
-        - Application: payment
-        - Environment: dev
+      tags:
+      - key: Application
+        value: payment
+      - key: Environment
+        value: dev
     -  name: Display the Dictionary
        debug: var=userdata
