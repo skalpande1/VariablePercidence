@@ -2,13 +2,14 @@
 - name: Dictionary playbook example
   hosts: webserver
   tasks:
+  
     - name: Create and Add items to dictionary
+      tags:
+        - key: Application
+          value: payment
+        - key: Environment
+          value: dev
       set_fact: 
           userdata: "{{ tags | type_debug  }}"
-      tags:
-      - key: Application
-        value: payment
-      - key: Environment
-        value: dev
     -  name: Display the Dictionary
        debug: var=userdata
