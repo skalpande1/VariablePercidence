@@ -7,6 +7,10 @@
                'Email': 'sk.middlewareinventory.com', 
                'location': 'chennai'
                }
+    - mydict2: {}
   tasks:
     - name: Display the Dictionary 
-      debug: var=mydict
+      debug: var= "{{ item }}"
+      loop: 
+      - mydict
+      - mydict2
