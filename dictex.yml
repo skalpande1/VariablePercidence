@@ -10,6 +10,4 @@
 
   tasks:
     - name: Display the Dictionary 
-      debug: var= "{{ item }}"
-      loop: 
-      - mydict
+      debug: var=mydict
