@@ -4,7 +4,7 @@
   tasks:
     - name: Create and Add items to dictionary
       set_fact: 
-          userdata: "{{ tags | items2dict  }}"
+          userdata: "{{ tags | type_debug  }}"
       tags:
       - key: Application
         value: payment
