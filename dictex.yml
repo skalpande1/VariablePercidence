@@ -1,0 +1,12 @@
+---
+- name: Dictionary playbook example
+  hosts: localhost
+  vars: 
+    - mydict: {
+               'Name': 'Shub', 
+               'Email': 'sk.middlewareinventory.com', 
+               'location': 'chennai'
+               }
+  tasks:
+    - name: Display the Dictionary 
+      debug: var=mydict
