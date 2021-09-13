@@ -9,5 +9,6 @@
       yum:
         name: httpd
         state: latest
+        allow_unauthenticated: yes
         delegate_to: web.jboss.etm1
         when: "ansible_fact['distribution']== 'CentOS'"
