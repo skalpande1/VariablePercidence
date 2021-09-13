@@ -3,13 +3,14 @@
   hosts: centosserver
   become: yes
   tasks:
-    - name: print httpd version
-      command: /usr/sbin/httpd -v
-      delegate_to: localhost
+    # - name: print httpd version
+    #   command: /usr/sbin/httpd -v
+    #   delegate_to: localhost
     - name: install httpd
       yum:
         name: httpd
         state: latest
+        delegate_to: localhost
         # allow_downgrade : yes
         # download_only: yes
         # delegate_to: web.jboss.etm1
