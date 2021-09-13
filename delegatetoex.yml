@@ -6,11 +6,11 @@
     # - name: print httpd version
     #   command: /usr/sbin/httpd -v
     #   delegate_to: localhost
-    - name: install httpd
-      yum:
-        name: httpd
-        state: latest
-        delegate_to: localhost
+    - name: install apache2
+      apt:
+        name: apache2
+        state: present
+        delegate_to: 172.31.38.65
         # allow_downgrade : yes
         # download_only: yes
         # delegate_to: web.jboss.etm1
