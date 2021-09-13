@@ -6,7 +6,7 @@
     - name: Touch files with an optional mode
       file:
         dest: "{{ item.path }}"
-      state: touch
+        state: touch
       mode: "{{ item.mode | default(omit) }}"
       loop:
       - path: /tmp/foo
