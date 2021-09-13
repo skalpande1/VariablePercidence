@@ -1,0 +1,15 @@
+---
+- name: "Ansible Delegate_to examples"
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Login local & setting varaibale
+      local_action: command hostname -f
+      delegate_to: localhost
+      register: hostname
+    - name: set Variables
+      set_fact:
+        domain: "{{ hostname.stdout_lines }}"
+    - name: show Domain
+      debug:
+        msg: Domain is {{ domain }}
