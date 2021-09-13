@@ -11,6 +11,6 @@
    - name: display the content for "foo" variables with filter
      debug:
         msg: "{{ foo | regex_search('.two.*',ignorecase=true) }}"
-   - name: display the content for "foo" variables with filter
+   - name: display the content for "foo" variables with filter one
      debug:
-        msg: "{{ foo | regex_search('*.Line.*',ignorecase=true) }}"
+        msg: "{{ foo | regex_search('.*Line.*') }}"
