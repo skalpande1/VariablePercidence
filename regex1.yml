@@ -4,6 +4,7 @@
   become: yes
   vars:
     foo: "Line one \nLine two \nLine Three"
+    version: 'Version: 6.8.2.14'
   tasks:
    - name: display the content for "foo" variables
      debug:
@@ -17,3 +18,8 @@
    - name: display the content for "foo" variables with filter multiline
      debug:
         msg: "{{ foo | regex_search('.*Line.*', multiline=True, ignorecase=True) }}"
+   - name: Debug version
+     debug:
+        msg: "{{ version | regex_search(version_re, '\\1') | first }}"
+        vars:
+        version_re: '^Version:\s+(\d+\.\d+.\d+\.\d+)'
