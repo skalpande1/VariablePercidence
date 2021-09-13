@@ -14,3 +14,6 @@
    - name: display the content for "foo" variables with filter one
      debug:
         msg: "{{ foo | regex_search('.*Line.*') }}"
+   - name: display the content for "foo" variables with filter multiline
+     debug:
+        msg: "{{ foo | regex_search('.*Line.*', multiline=True, ignorecase=True) }}"
