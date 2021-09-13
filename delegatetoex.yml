@@ -10,3 +10,4 @@
         name: httpd
         state: latest
         delegate_to: web.jboss.etm1
+        when: "ansible_fact['distribution']== 'CentOS'"
