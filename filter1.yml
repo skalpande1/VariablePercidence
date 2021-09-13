@@ -19,4 +19,4 @@
         var_1: 5
       set_fact: 
         test_var: "{{ var_1 | default(2) }}"
-      debug: test_var 
+        debug: test_var 
