@@ -8,6 +8,6 @@
    - name: display the content for "foo" variables
      debug:
         var: foo
-   - name: display the content for "foo" variables
+   - name: display the content for "foo" variables with filter
      debug:
-        msg: "{{ foo | regex_search('.two.*',ignorecase=true) }}"
+        msg: "{{ foo | regex_search('*.two.*',ignorecase=true) }}"
