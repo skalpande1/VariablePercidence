@@ -9,7 +9,7 @@
       register: hostname
     - name: set Variables
       set_fact:
-        domain: "{{ hostname.stdout_lines }}"
+        domain: "{{ hostname }}"
     - name: show Domain
       debug:
         msg: Domain is {{ domain }}
