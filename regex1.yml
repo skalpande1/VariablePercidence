@@ -5,6 +5,7 @@
   vars:
     foo: "Line one \nLine two \nLine Three"
     version: 'Version: 6.8.2.14'
+    version_re: '^Version:\s+(\d+\.\d+.\d+\.\d+)'
   tasks:
    - name: display the content for "foo" variables
      debug:
@@ -21,5 +22,5 @@
    - name: Debug version
      debug:
         msg: "{{ version | regex_search(version_re, '\\1') | first }}"
-        vars:
-        version_re: '^Version:\s+(\d+\.\d+.\d+\.\d+)'
+       # vars:
+        # version_re: '^Version:\s+(\d+\.\d+.\d+\.\d+)'
