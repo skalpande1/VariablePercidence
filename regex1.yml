@@ -1,0 +1,10 @@
+---
+- name: Example for delegate to
+  hosts: centosserver
+  become: yes
+  tasks:
+  vars:
+    foo: "Line one \nLine two \nLine Three"
+- name: display the content for "foo" variables
+  debug:
+    var: foo
