@@ -7,7 +7,7 @@
       file:
         dest: "{{ item.path }}"
         state: touch
-      mode: "{{ item.mode | default(omit) }}"
+        mode: "{{ item.mode | default(omit) }}"
       loop:
       - path: /tmp/foo
       - path: /tmp/bar
