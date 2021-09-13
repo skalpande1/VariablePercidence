@@ -1,6 +1,6 @@
 ---
 - name: Example for delegate to
-  hosts: webserver
+  hosts: centosserver
   become: yes
   tasks:
     - name: print httpd version
@@ -9,7 +9,7 @@
       yum:
         name: httpd
         state: latest
-        allow_downgrade : yes
-        download_only: yes
+        # allow_downgrade : yes
+        # download_only: yes
         delegate_to: web.jboss.etm1
-        when: "ansible_fact['distribution']== 'CentOS'"
+        # when: "ansible_fact['distribution']== 'CentOS'"
