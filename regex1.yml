@@ -20,6 +20,6 @@
         msg: "{{ foo | regex_search('.*Line.*', multiline=True, ignorecase=True) }}"
    - name: Debug version
      debug:
-        msg: "{{ version | regex_search('.Version: .*') }}"
+        msg: "{{ version | regex_search('.Version:.*') }}"
         # vars:
         # version_re: '^Version:\s+(\d+\.\d+.\d+\.\d+)'
