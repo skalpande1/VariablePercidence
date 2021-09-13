@@ -4,3 +4,6 @@
 ## localhost var1=inventory local_var=5
 [appserver]
 172.31.38.65
+
+[centosserver]
+172.31.37.214
