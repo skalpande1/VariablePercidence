@@ -1,0 +1,10 @@
+---
+- name: Dictionary playbook example
+  hosts: webserver
+  become: yes
+  tasks:
+    - include_vars: dict.yml
+
+    - name: Display the data type of data
+      debug:
+        msg: "x: {{x | type_debug}} / y: {{y |type_debug}}"
