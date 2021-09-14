@@ -1,6 +1,7 @@
 ---
 - name: Dictionary playbook example
   hosts: webserver
+  become: yes
   tasks:
   
     - name: Create and Add items to dictionary
