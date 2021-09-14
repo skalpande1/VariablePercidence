@@ -14,9 +14,16 @@
       - path: /tmp/baz
         mode: "0444"
 
-    - name: filtering concept
+    - name: filtering concept variable not defined
       # vars:
       #   var_1: 5
       set_fact: 
         test_var: "{{ var_1 | default(2) }}"
         debug: test_var 
+    - name: filtering concept converting dictonaries to list
+      tags:
+        Application: payment
+        Environment: dev
+      set_fact: 
+        filter_var: "{{ tags | dict2items }}"
+        debug: filter_var
