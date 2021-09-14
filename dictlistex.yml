@@ -16,3 +16,5 @@
         msg: "{{y[1] | type_debug}}"
     - debug:
         var: y[1]
+    - debug: "{{ item }} : {{ item| type_debug }} / {{x[item]}}: {{ x[item] | type_debug }}"
+      with_items: "{{ x }}"
