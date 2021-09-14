@@ -18,5 +18,5 @@
     - name: Ansible array variables example
       debug: 
         msg: "{{ item }}"
-        with_items:
+      with_items:
         - "{{ hello }}"
