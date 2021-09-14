@@ -14,5 +14,4 @@
         - "{{ instruments }}"
     
     - name: Get dict from list output
-      debug:
-        msg : var=band
+      debug: var=band
