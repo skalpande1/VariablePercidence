@@ -35,3 +35,8 @@
     - name: Ansible Find Example
       debug:
         msg: "{{python.Developer }}"
+    - name: convert dict to list
+      set_fact:
+        listvar: "{{ python | dict2items }}"
+      debug:
+        msg: var=listvar
