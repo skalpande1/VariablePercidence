@@ -9,10 +9,10 @@
       debug:
         msg: "x: {{x | type_debug}} / y: {{y |type_debug}}"
     - debug:
-        msg: "{{x['b1'] | type_debug}}"
+        msg: "{{x['b2'] | type_debug}}"
     - debug:
-        var: x['b1']
+        var: x['b2']
     - debug:
-        msg: "{{y[0] | type_debug}}"
+        msg: "{{y[1] | type_debug}}"
     - debug:
-        var: y[0]
+        var: y[1]
