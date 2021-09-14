@@ -20,10 +20,11 @@
       set_fact: 
         test_var: "{{ var_1 | default(2) }}"
         debug: test_var 
+        
     - name: filtering concept converting dictonaries to list
       tags:
-      Application: payment
-      Environment: dev
+        Application: payment
+        Environment: dev
       set_fact: 
         filter_var: "{{ tags | dict2items }}"
         debug: filter_var
