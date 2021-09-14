@@ -1,6 +1,6 @@
 ---
 - name: Dictionary playbook example
-  hosts: webserver
+  hosts: local
   become: yes
   tasks:
     - include_vars: dict.yml
