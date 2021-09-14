@@ -7,9 +7,16 @@
         email: alice@example.com
       - username: bob
         email: bob@example.com
+    hello: [Asia, Americas, Artic, Antartic ,Oceania,Europe,Africa]
 
   tasks:
     - name: concatanate list of elements
       debug:
         msg: "{{ users | map('json_query','email') | list | join('; ') }}"
       delegate_to: localhost
+    
+    - name: Ansible array variables example
+      debug: 
+        msg: "{{ item }}"
+        with_items:
+        - "{{ hello }}"
