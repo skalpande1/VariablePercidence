@@ -34,4 +34,4 @@
         msg: "{{python['Designer'] }}"
     - name: Ansible Find Example
       debug:
-        msg: "{{python.Designer }}"
+        msg: "{{python.Developer }}"
