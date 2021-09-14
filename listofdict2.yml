@@ -36,6 +36,6 @@
       debug:
         msg: "{{python.Developer }}"
     - name: convert dict to list
-      set_fact:
-        listvar: "{{ python | dict2items }}"
-      debug: var=listvar
+    #   set_fact:
+    #     listvar: "{{ python | dict2items }}"
+      debug: "{{ python | dict2items }}"
