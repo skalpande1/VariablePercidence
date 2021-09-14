@@ -12,5 +12,7 @@
       with_togather:
         - "{{ names }}"
         - "{{ instruments }}"
+    
+    - name: Get dict from list output
       debug:
         msg : var=band
