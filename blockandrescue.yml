@@ -1,6 +1,6 @@
 ---
 - name: Block And Rescue playbook example
-  hosts: webserver
+  hosts: local
   become: yes
   tasks: 
     - name: Handle the error 
