@@ -8,7 +8,7 @@
   tasks: 
     - name: Get dict from list
       set_fact:
-        band: "{{ band | default([]) }}"
+        band: "{{ band | default([]) + [ { 'names': item.0, 'instruments': item.1 } ]}}"
       with_together:
         - "{{ names }}"
         - "{{ instruments }}"
