@@ -38,4 +38,4 @@
     - name: convert dict to list
       set_fact:
         listvar: "{{ python | dict2items }}"
-        debug: var=listvar
+        debug: listvar
