@@ -29,3 +29,9 @@
     - name: Ansible Dictionary Example
       debug:
         msg: "{{ python }}"
+    - name: Ansible Hash Example
+      debug:
+        msg: "{{python['Designer'] }}"
+    - name: Ansible Find Example
+      debug:
+        msg: "{{python.Designer }}"
