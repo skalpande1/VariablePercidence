@@ -12,4 +12,4 @@
       set_fact: 
           userdata: "{{ tags | type_debug  }}"
     -  name: Display the Dictionary
-       debug: var=userdata
+       debug: userdata
