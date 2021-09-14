@@ -14,7 +14,14 @@
       Designer: 'Guido van Rosum'
       Developer: 'Python Software Foundation'
       OS: 'Cross-platform'
-
+    #List
+    fruits:
+    - fruit: apple
+      color: red
+    - fruit: pear
+      color: yellow
+    - fruit: grapefruit
+      color: yellow
   tasks:
     - name: concatanate list of elements
       debug:
@@ -41,5 +48,5 @@
         debug: listvar
     - name: convert list to dict
       set_fact:
-        dictvar: "{{ hello | items2dict }}"
+        dictvar: "{{ fruits | items2dict(key_name='fruit', value_name='color') }}"
         debug: dictvar
