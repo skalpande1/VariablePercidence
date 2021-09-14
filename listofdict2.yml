@@ -39,3 +39,7 @@
       set_fact:
         listvar: "{{ python | dict2items }}"
         debug: listvar
+    - name: convert list to dict
+      set_fact:
+        dictvar: "{{ hello | items2dict }}"
+        debug: dictvar
