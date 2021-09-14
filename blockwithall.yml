@@ -1,5 +1,5 @@
 ---
-- name: Block And Always playbook example
+- name: Block And All playbook example
   hosts: local
   become: yes
   tasks:
