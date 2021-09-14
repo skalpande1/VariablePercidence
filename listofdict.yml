@@ -1,0 +1,16 @@
+---
+- name: Dictionary playbook example
+  hosts: local
+  become: yes
+  vars:
+    names: ["Miles","Sonny","Red","Paul","Philly"]
+    instruments: ["Trumpet","Saxophone","Piano","Bass","Drums"]
+  tasks: 
+    - name: Get dict from list
+      set_fact:
+        band: "{{ band | default([]) + [ { 'names': item.0, 'instruments': item.1 } ]}}"
+      with_togather:
+        - "{{ names }}"
+        - "{{ instruments }}"
+      debug:
+        msg : var=band
