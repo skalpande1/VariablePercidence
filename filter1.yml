@@ -15,8 +15,8 @@
         mode: "0444"
 
     - name: filtering concept
-      vars:
-        var_1: 5
+      # vars:
+      #   var_1: 5
       set_fact: 
         test_var: "{{ var_1 | default(2) }}"
         debug: test_var 
