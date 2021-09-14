@@ -7,7 +7,13 @@
         email: alice@example.com
       - username: bob
         email: bob@example.com
+    #List
     hello: [Asia, Americas, Artic, Antartic ,Oceania,Europe,Africa]
+    #Dict
+    python:
+      Designer: 'Guido van Rosum'
+      Developer: 'Python Software Foundation'
+      OS: 'Cross-platform'
 
   tasks:
     - name: concatanate list of elements
@@ -15,8 +21,11 @@
         msg: "{{ users | map('json_query','email') | list | join('; ') }}"
       delegate_to: localhost
     
-    - name: Ansible array variables example
+    - name: Ansible array(List) variables example
       debug: 
         msg: "{{ item }}"
       with_items:
         - "{{ hello }}"
+    - name: Ansible Dictionary Example
+      debug:
+        msg: "{{ python }}"
